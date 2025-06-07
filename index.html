@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Conversor de Contatos</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: url('https://i.postimg.cc/fTp6HpxD/40856935ef91bff76cea2bc7a7afe9d8.jpg') no-repeat center center fixed;
+      background-size: cover;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 30px 20px 20px;
+      position: relative;
+    }
+
+    body::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 0;
+    }
+
+    .logo-topo {
+      position: relative;
+      z-index: 1;
+      margin-bottom: 10px;
+      max-width: 340px;
+      width: 100%;
+    }
+
+    .container {
+      position: relative;
+      z-index: 1;
+      background: rgba(88, 28, 135, 0.8);
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+      width: 100%;
+      max-width: 500px;
+      border: 2px solid #a855f7;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #ffffff;
+      font-size: 24px;
+    }
+
+    textarea, input {
+      width: 100%;
+      margin-top: 10px;
+      padding: 12px;
+      border: 1px solid #d8b4fe;
+      border-radius: 10px;
+      resize: vertical;
+      font-size: 17px;
+      background-color: rgba(64, 0, 128, 0.5);
+      color: #fff;
+      transition: border 0.3s;
+    }
+
+    textarea::placeholder, input::placeholder {
+      color: #ddd;
+    }
+
+    textarea:focus, input:focus {
+      border-color: #c084fc;
+      outline: none;
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 12px;
+      width: 100%;
+      background-color: #000;
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      font-size: 17px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background-color: #333;
+    }
+
+    a#downloadLink {
+      display: block;
+      margin-top: 15px;
+      text-align: center;
+      color: #f3e8ff;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    a#downloadLink:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <img class="logo-topo" src="https://i.postimg.cc/pdWb88fF/1749323427200.png" alt="Logo" />
+  
+  <div class="container">
+    <h1>Conversor de Contatos</h1>
+    <textarea id="inputContatos" placeholder="Cole os números aqui, um por linha"></textarea>
+    <input type="text" id="nomeBase" placeholder="Nome base para contatos (ex: Contato)" />
+    <input type="text" id="nomeArquivo" placeholder="Nome do arquivo (ex: contatos.vcf)" />
+    <button id="btnGerar">Gerar arquivo VCF</button>
+    <a id="downloadLink" style="display:none" download>Download do arquivo</a>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
